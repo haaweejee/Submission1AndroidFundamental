@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Submission 1 - Github User</string>
+    <string name="dummy_name">Benjamin Black</string>
+    <string name="dummy_location">Jakarta, Indonesia</string>
+    <string name="dummy_company">KotlinID</string>
+    <string name="txt_followers">Followers</string>
+    <string name="dummy_followers">23</string>
+    <string name="dummy_following">20000</string>
+    <string name="txt_following">Following</string>
+    <string name="dummy_repositories">36</string>
+    <string name="txt_repositories">Repositories</string>
+    <string name="share">share</string>
+</resources>
