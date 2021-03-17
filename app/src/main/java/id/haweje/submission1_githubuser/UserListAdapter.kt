@@ -1,6 +1,7 @@
 package id.haweje.submission1_githubuser
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,9 +10,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import id.haweje.submission1_githubuser.data.Users
 import id.haweje.submission1_githubuser.databinding.ItemListUsersBinding
-import java.io.IOException
 
-class UserListAdapter(private val listUser: ArrayList<Users>) :
+class UserListAdapter(private val listUser: MutableList<Users>) :
     RecyclerView.Adapter<UserListAdapter.ListViewHolder>() {
     inner class ListViewHolder(itemView : View):RecyclerView.ViewHolder(itemView) {
         private val binding = ItemListUsersBinding.bind(itemView)
@@ -44,5 +44,13 @@ class UserListAdapter(private val listUser: ArrayList<Users>) :
 
     override fun getItemCount(): Int {
         return listUser.size
+    }
+
+    private val TAG = "Users"
+    private var users = listOf<Users>()
+    fun searchData(users: List<Users>){
+        this.users = users
+        Log.d(TAG, users.toString())
+        notifyDataSetChanged()
     }
 }
