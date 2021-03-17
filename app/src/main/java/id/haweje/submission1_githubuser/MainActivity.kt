@@ -1,8 +1,12 @@
 package id.haweje.submission1_githubuser
 
+import android.app.SearchManager
+import android.content.Context
 import android.os.Bundle
+import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import id.haweje.submission1_githubuser.data.Users
 import id.haweje.submission1_githubuser.databinding.ActivityMainBinding
@@ -12,7 +16,8 @@ import java.io.IOException
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityMainBinding
-    private var listUser: ArrayList<Users> = arrayListOf()
+    private var listUser: MutableList<Users> = mutableListOf()
+    private lateinit var userAdapter : UserListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,14 +30,43 @@ class MainActivity : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         showList()
         readJson()
-
     }
 
 
     private fun showList(){
+        listUser.clear()
+        userAdapter = UserListAdapter(listUser)
         binding.rvUsers.layoutManager = LinearLayoutManager(this)
         binding.rvUsers.adapter = UserListAdapter(listUser)
         binding.rvUsers.setHasFixedSize(true)
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.homemenu, menu)
+
+        val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
+        val searchView = menu?.findItem(R.id.searchMenu)?.actionView as SearchView
+
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
+        searchView.queryHint = "Cari Users"
+        searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText != null){
+                    val newList = listUser.filter {
+                        it.name.contains(newText, true)
+                    }
+                    userAdapter.searchData(newList)
+
+                }
+                return true
+            }
+        })
+        return super.onCreateOptionsMenu(menu)
     }
     private fun readJson(){
         val json: String?
@@ -64,4 +98,5 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
 }
