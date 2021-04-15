@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Github User</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="change_language">Ganti Bahasa</string>
+    <string name="people">People</string>
+    <string name="txt_title">Ayo Cari Users</string>
+    <string name="txt_desc">Cari Semua Users Di Github</string>
+    <string name="search_users_hint">Cari Users</string>
+    <string name="search">search</string>
+    <string name="share">share</string>
+    <string name="txt_repositories">Repositories</string>
+    <string name="txt_following">Mengikuti</string>
+    <string name="dummy_repositories">0</string>
+    <string name="dummy_following">0</string>
+    <string name="dummy_followers">0</string>
+    <string name="txt_followers">Pengikut</string>
+    <string name="dummy_company">KotlinID</string>
+    <string name="dummy_location">Jakarta, Indonesia</string>
+    <string name="dummy_name">Nama</string>
+    <string name="dummy_web">www.google.com</string>
+    <string name="favorite">Favorite</string>
+    <string name="user_telah_anda_sukai">User telah Anda sukai</string>
+    <string name="Like">Suka</string>
+    <string name="settings">Pengaturan</string>
+    <string name="reminder_active">Aktifkan Reminder</string>
+    <string name="reminder_github">Pengingat Github</string>
+    <string name="reminder_activitate">Pengingat sudah dinyalakan</string>
+    <string name="reminder_cancel">Pengingat di Nonaktifkan</string>
+    <string name="lets_search_user">Ayo Cari User Di Github User</string>
+    <string name="data_not_found">Data Tidak Ditemukan</string>
+    <string name="go_search_other_user">Silahkan cari User Lain</string>
+    <string name="not_have_data">Belom Ada Data</string>
+    <string name="make_user_favorite">Silahkan cari dan Favoritkan User</string>
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Github User</string>
+    <string name="dummy_name">Name</string>
+    <string name="dummy_location">Jakarta, Indonesia</string>
+    <string name="dummy_company">KotlinID</string>
+    <string name="txt_followers">Followers</string>
+    <string name="dummy_followers">0</string>
+    <string name="dummy_following">0</string>
+    <string name="txt_following">Following</string>
+    <string name="dummy_repositories">0</string>
+    <string name="txt_repositories">Repositories</string>
+    <string name="share">share</string>
+    <string name="search">cari</string>
+    <string name="search_users_hint">Search Users</string>
+    <string name="txt_desc">Search all of GitHub People</string>
+    <string name="txt_title">Find Your Users</string>
+    <string name="people">People</string>
+    <string name="change_language">Change Language</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dummy_web">www.google.com</string>
+    <string name="favorite">Favorite</string>
+    <string name="user_telah_anda_sukai">You has Liked the User</string>
+    <string name="Like">Like</string>
+    <string name="settings">Settings</string>
+    <string name="reminder_active">Activate Reminder</string>
+    <string name="reminder_github">Github Reminder</string>
+    <string name="reminder_activitate">Reminder Has Activated</string>
+    <string name="reminder_cancel">Reminder Has Nonactivated</string>
+    <string name="lets_search_user">Lets Search User on Github</string>
+    <string name="data_not_found">Data Not Found</string>
+    <string name="go_search_other_user">Search another User Please</string>
+    <string name="not_have_data">No Data Here</string>
+    <string name="make_user_favorite">Go Search and Liked User</string>
+</resources>

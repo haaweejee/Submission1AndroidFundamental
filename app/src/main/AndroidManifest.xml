@@ -2,6 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="id.haweje.submission1_githubuser">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <permission
+        android:name="id.haweje.submission1_githubuser.READ_DATABASE"
+        android:protectionLevel="normal" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +17,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Submission1GithubUser">
-        <activity android:name=".SplashScreen"
+        <activity android:name=".ui.favorite.FavoriteActivity" />
+
+        <receiver
+            android:name=".alarm.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ui.settings.SettingsActivity" />
+
+        <provider
+            android:name=".provider.ContentProvider"
+            android:authorities="id.haweje.submission1_githubuser"
+            android:enabled="true"
+            android:exported="true"
+            android:readPermission="id.haweje.submission1_githubuser.READ_DATABASE" />
+
+        <activity
+            android:name=".ui.SplashScreen"
             android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,8 +42,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetailActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".ui.detail.DetailActivity" />
+        <activity
+            android:name=".ui.home.MainActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:taskAffinity=""
+            android:windowSoftInputMode="adjustPan" />
     </application>
 
 </manifest>
